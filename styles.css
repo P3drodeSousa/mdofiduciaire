@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+form {
+  border: 3px solid hsl(0, 0%, 66%);
+  padding: 5vw;
+  width: 100%;
+}
+
+form div {
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
+}
+
+li {
+  text-decoration: none;
+}
+
+.hide {
+  display: none;
+}
+
+#totals {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.professional {
+  margin: 30px 0;
+  font-size: 20px;
+  color: red;
+}
+
+#total {
+  font-size: 50px;
+  color: green;
+}
