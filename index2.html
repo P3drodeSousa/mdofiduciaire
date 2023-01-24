@@ -145,7 +145,52 @@ Skip to content</a>
         position: relative;
 		  margin: auto;
         position: relative;
-    } </style>
+    } 
+
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+label {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 75px;
+	height: 45px;
+  margin: auto 0;
+	background: grey;
+	display: block;
+	border-radius: 100px;
+	position: relative;
+}
+
+label:after {
+	content: '';
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	width: 35px;
+	height: 35px;
+	background: #fff;
+	border-radius: 90px;
+	transition: 0.3s;
+}
+
+input:checked + label {
+	background: #bf2831;
+}
+
+input:checked + label:after {
+	left: calc(100% - 5px);
+	transform: translateX(-100%);
+}
+
+label:active:after {
+	width: 100px;
+}
+
+    </style>
 
  <div class="overlay">
 
@@ -200,12 +245,15 @@ Skip to content</a>
         </select>
       </div>
 
-      <div  class="row py-3">
+      <div  class="row py-3 d-flex align-items-center">
         <li  class="col-sm-8  font-weight-bold"  style="font-size:24px">Avez-vous des enfant ?</li>
-        <div class="col-sm-4 d-flex justify-content-end">
-            <input type="checkbox" name="enfants" id="enfants" style="accent-color: red; width: 38px; height: 38px; margin-right: -15px;" />
+
+        <div class="col-sm-4 d-flex justify-content-end pr-0">
+          <input type="checkbox" id="enfants" name="enfants" /><label for="enfants">Toggle</label>
         </div>
-        
+
+
+
         <div class=" enfants row w-100 py-3 d-none">
           <li class="col-sm-8  font-weight-bold" style="color: #bf2831;font-size: 20px; margin-left: 15px;">Nombre d'enfants</li>
           <select name="nombreEnfants" id="nombreEnfants"  class="col-sm-4 p-2 w-100 ml-auto" style="background-color: #cacccd;
@@ -221,14 +269,14 @@ Skip to content</a>
         </div>
       </div>
 
-      <div  class="row py-3">
+      <div  class="row py-3 d-flex align-items-center">
         <li  class="col-sm-8 font-weight-bold"  style="font-size:24px">Êtes-vous propriétaire ?</li>
-        <div class="col-sm-4 d-flex justify-content-end">
-            <input type="checkbox" name="proprietaire" id="proprietaire" style="accent-color: red; width: 38px; height: 38px; margin-right: -15px;"/>
+        <div class="col-sm-4 d-flex justify-content-end pr-0">
+           <input type="checkbox" name="proprietaire" id="proprietaire" /><label for="proprietaire">Toggle</label>
         </div>
        
         <div class="proprietaire row w-100 py-3 d-none ">
-           <label class="col-sm-8  font-weight-bold" style="color: #bf2831;font-size: 20px; margin-left: 15px;">Nombre de bien</label>
+           <li class="col-sm-8  font-weight-bold" style="color: #bf2831;font-size: 20px; margin-left: 15px;">Nombre de bien</li>
           <select name="proprietaire" id="proprietaires"  class="col-sm-4 p-2 w-100 ml-auto" style="background-color: #cacccd;
     color: #bf2831;font-size:24px; border: 2px solid; margin-right: -15px; display: flex; align-items: center;">
             <option value="1">1</option>
@@ -242,10 +290,10 @@ Skip to content</a>
         </div>
       </div>
 
-      <div  class="row py-3">
+      <div  class="row py-3 d-flex align-items-center">
         <li  class="col-sm-8 font-weight-bold" style="font-size:24px">Avez-vous de titres ( actions ou des cryptomonnaies) ?</li>
-        <div class="col-sm-4 d-flex justify-content-end">
-             <input type="checkbox" name="actions" id="actions" class=" ml-auto" style="accent-color: red; width: 38px; height: 38px; margin-right: -15px;"/>
+        <div class="col-sm-4 d-flex justify-content-end pr-0" >
+           <input type="checkbox" name="actions" id="actions" /><label for="actions">Toggle</label>
         </div>
        
         <div class="actions row w-100 py-3 d-none">

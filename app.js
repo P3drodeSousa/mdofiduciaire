@@ -15,7 +15,6 @@ const close = document.querySelector("button.close");
 
 //E:H
 something.addEventListener("click", (e) => {
-  console.log("clicked");
   overlay.classList.add("d-flex");
 });
 
